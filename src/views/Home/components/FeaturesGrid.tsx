@@ -78,10 +78,10 @@ const FeaturesGrid: React.FC = () => {
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl"
+                className="bg-white overflow-hidden rounded-xl shadow-lg transform transition duration-300 hover:scale-95 hover:shadow-xl"
               >
-                <div className="p-6">
-                  <div className={`${solution.color} inline-flex p-3 rounded-lg text-white mb-4`}>
+                <div className="p-6 pt-0 text-center">
+                  <div className={`${solution.color} relative outline outline-offset-[-3px] outline-1 inline-flex py-3 px-10 text-2xl rounded-b-[50%] text-white mb-3`}>
                     {solution.icon}
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">

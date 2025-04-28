@@ -91,7 +91,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 	}, [pathname]);
 
 	return (
-		<nav className={`w-full`}>
+		<nav className={`w-full py-2 bg-primary`}>
 			<div className="max-w-[1538px] mx-auto px-4 w-full">
 				<div className="flex justify-between h-16 items-center">
 					{/* Logo */}
@@ -108,10 +108,11 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 						{menuItems.map((item) => (
 							<li
 								key={item.text}
-								className={`text-[#ffffffc9] list-none transition-all duration-300 hover:text-primary cursor-pointer`}
+								className={`relative flex gap-1 text-[#ffffffc9] list-none transition-all duration-300 hover:text-white cursor-pointer before:absolute before:left-0 before:bottom-0 before:w-0 before:hover:w-[70%] before:transition-all before:duration-500 before:h-[1px] before:bg-white`}
 								onClick={() => (scrollToSection && item.ref) ? scrollToSection(item.ref) : navigate('/?scrollTo=' + item.text)}
 							>
-								{item.text}
+								<span>{item.icon}</span>
+								<span>{item.text}</span>
 							</li>
 						))}
 					</div>
@@ -173,7 +174,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 													<Button
 														block
 														variant="solid"
-														className="rounded-[5px]"
+														className="rounded-[5px] border"
 													>
 														Get Started
 													</Button>
@@ -221,7 +222,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 											<Button
 												block
 												variant="solid"
-												className="rounded-[5px]"
+												className="rounded-[5px] border"
 											>
 												Get Started
 											</Button>

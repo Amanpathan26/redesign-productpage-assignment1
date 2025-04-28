@@ -10,7 +10,7 @@ interface ViewsProps {
 
 const Views = (props: ViewsProps) => {
     return (
-        <Suspense fallback={<Loading loading={true} className="w-full" />}>
+        <Suspense fallback={<Loading loading={true} className="w-full"/>}>
             <AllRoutes {...props} />
         </Suspense>
     )

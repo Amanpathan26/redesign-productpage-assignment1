@@ -17,9 +17,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     aboutRef,
 }) => {
 
-
     return (
-        <div className="!bg-[#01052f] w-full relative flex flex-col py-2 md:py-5 overflow-hidden">
+        <div className="!bg-[#01052f] w-full relative flex flex-col overflow-hidden">
             <HomeNavbar
                 scrollToSection={scrollToSection}
                 featuresRef={featuresRef}
@@ -27,7 +26,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 aboutRef={aboutRef}
             />
 
-            <div className='min-h-[90vh] flex items-center'>
+            <div className='min-h-[90vh] flex items-center bg-[url("@/assets/images/HC_bg_image.jpg")] bg-cover bg-no-repeat bg-center'>
                 {/* Background video for larger screens */}
                 {/* <video
                     autoPlay
@@ -52,8 +51,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
                 <div className="relative z-10 text-white w-full flex flex-col lg:flex-row-reverse md:mt-6 lg:mt-0 lg:items-center lg:justify-between px-4 max-w-[1538px] mx-auto">
                     {/* Video Section */}
-                    <div className="lg:w-5/12 mt-8 lg:mt-0 lg:mb-0 mb-6">
-                        {/* <div className="relative overflow-hidden pt-[56.25%] rounded-lg shadow-lg">
+                    {/* <div className="lg:w-5/12 mt-8 lg:mt-0 lg:mb-0 mb-6 border">
+                         <div className="relative overflow-hidden pt-[56.25%] rounded-lg shadow-lg">
                             <iframe
                                 src={`https://www.youtube.com/embed/xQl8i2sO_Ls?autoplay=1&mute=${isMuted ? 1 : 0
                                     }&loop=1&playlist=xQl8i2sO_Ls&controls=0&showinfo=0&rel=0`}
@@ -73,11 +72,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                                     <IoVolumeHighOutline size={24} />
                                 )}
                             </button>
-                        </div> */}
-                    </div>
+                        </div> 
+                    </div> */}
 
                     {/* Content Section */}
-                    <div className="lg:w-1/2 lg:pr-8">
+                    <div className="lg:w-1/2 mx-auto">
                         <h1 className="text-2xl md:text-4xl font-semibold mb-4 capitalize text-white">
                             <span className="text-primary">AI front office </span> <br />
                             for healthcare agents
@@ -90,23 +89,23 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                                 Digital Marketing
                             </span>{' '}
                         </p>
-                        <div>
+                        <div className='text-start'>
                             <HcfSignupPopup popupButtonStatus buttonChildren={<Button block variant='solid' className='rounded-[5px] max-w-[200px]'>Get Started</Button>} />
                         </div>
-                        <div className="text-white flex gap-12 mt-8 flex-wrap">
-                            <div>
+                        <div className="text-white flex gap-12 mt-8 flex-wrap justify-center">
+                            <div className='text-center'>
                                 <h1 className="text-3xl font-bold text-white">
                                     2100<span className="text-primary ml-1">+</span>
                                 </h1>
                                 <p className="text-lg capitalize">qualified doctors</p>
                             </div>
-                            <div>
+                            <div className='text-center'>
                                 <h1 className="text-3xl font-bold text-white">
                                     1000<span className="text-primary ml-1">+</span>
                                 </h1>
                                 <p className="text-lg capitalize">hospitals</p>
                             </div>
-                            <div>
+                            <div className='text-center'>
                                 <h1 className="text-3xl font-bold text-white">
                                     800<span className="text-primary ml-1">+</span>
                                 </h1>

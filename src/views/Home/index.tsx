@@ -44,10 +44,11 @@ const Home: React.FC = () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
+	
 	return (
 		<>
 			<div>
-				<div className="">
+				<div className="bg-black">
 					<HeroSection
 						scrollToSection={scrollToSection}
 						featuresRef={FqRef}

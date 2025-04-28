@@ -3,7 +3,7 @@ import PublicRoute from './PublicRoute'
 import AuthorityGuard from './AuthorityGuard'
 import AppRoute from './AppRoute'
 import PageContainer from '@/components/template/PageContainer'
-import { protectedRoutes, publicRoutes } from '@/configs/routes.config'
+import { protectedRoutes, publicRoutes, sharedBothRoutes } from '@/configs/routes.config'  
 import appConfig from '@/configs/app.config'
 import { useAuth } from '@/auth'
 import { Routes, Route, Navigate } from 'react-router-dom'
@@ -23,11 +23,42 @@ const AllRoutes = (props: AllRoutesProps) => {
 
     return (
         <Routes>
+            <Route path="/" element={<PublicRoute />}>
+                {sharedBothRoutes.map((route) => (
+                    <Route
+                        key={route.key}
+                        path={route.path}
+                        element={
+                            <AppRoute
+                                routeKey={route.key}
+                                component={route.component}
+                                {...route.meta}
+                            />
+                        }
+                    />
+                ))}
+
+                {publicRoutes.map((route) => (
+                    <Route
+                        key={route.key}
+                        path={route.path}
+                        element={
+                            <AppRoute
+                                routeKey={route.key}
+                                component={route.component}
+                                {...route.meta}
+                            />
+                        }
+                    />
+                ))}
+            </Route>
+
             <Route path="/" element={<ProtectedRoute />}>
                 <Route
                     path="/"
                     element={<Navigate replace to={authenticatedEntryPath} />}
                 />
+
                 {protectedRoutes.map((route, index) => (
                     <Route
                         key={route.key + index}
@@ -45,22 +76,6 @@ const AllRoutes = (props: AllRoutesProps) => {
                                     />
                                 </PageContainer>
                             </AuthorityGuard>
-                        }
-                    />
-                ))}
-                <Route path="*" element={<Navigate replace to="/" />} />
-            </Route>
-            <Route path="/" element={<PublicRoute />}>
-                {publicRoutes.map((route) => (
-                    <Route
-                        key={route.path}
-                        path={route.path}
-                        element={
-                            <AppRoute
-                                routeKey={route.key}
-                                component={route.component}
-                                {...route.meta}
-                            />
                         }
                     />
                 ))}

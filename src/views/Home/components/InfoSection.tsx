@@ -191,7 +191,7 @@ const FullPageSections = () => {
             <div className="w-full max-w-7xl mx-auto px-4 py-20 flex flex-col gap-y-32">
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
                     {/* Image Section */}
-                    <div className="w-full lg:w-1/2 flex items-center justify-center">
+                    <div className="relative w-full lg:w-1/2 flex items-center justify-center before:hidden lg:before:block before:absolute before:right-0 before:top-0 before:h-full before:w-[1px] before:bg-gradient-to-t from-transparent via-sky-500 to-transparent">
                         <img
                             src={aboutUs}
                             alt="About us"
@@ -202,10 +202,10 @@ const FullPageSections = () => {
                     {/* Content Section */}
                     <div className="w-full lg:w-1/2">
                         <div className="mb-6">
-                            <h2 className="text-3xl font-bold text-gray-800 mb-2">
+                            <h2 className="relative text-4xl font-bold text-gray-800 mb-2 pl-5 before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:bg-primary">
                                 About Us
                             </h2>
-                            <div className="h-1 w-20 bg-primary rounded-full"></div>
+                            {/* <div className="h-1 w-20 bg-primary rounded-full"></div> */}
                         </div>
 
                         <div className="space-y-4">
@@ -289,7 +289,7 @@ const FullPageSections = () => {
 
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
                     {/* Image Section - Will appear first on mobile */}
-                    <div className="w-full lg:w-1/2 flex items-center justify-center order-first lg:order-last">
+                    <div className="relative w-full lg:w-1/2 flex items-center justify-center order-first lg:order-last before:hidden lg:before:block before:absolute before:left-0 before:top-0 before:h-full before:w-[1px] before:bg-gradient-to-t from-transparent via-sky-500 to-transparent">
                         <img
                             src={mission}
                             alt="Our Mission"
@@ -300,10 +300,10 @@ const FullPageSections = () => {
                     {/* Content Section */}
                     <div className="w-full lg:w-1/2 order-last lg:order-first">
                         <div className="mb-6">
-                            <h2 className="text-3xl font-bold text-gray-800 mb-2">
+                            <h2 className="relative text-4xl font-bold text-gray-800 mb-2 pl-5 before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:bg-primary">
                                 Our Mission
                             </h2>
-                            <div className="h-1 w-20 bg-primary rounded-full"></div>
+                            {/* <div className="h-1 w-20 bg-primary rounded-full"></div> */}
                         </div>
 
                         <div className="space-y-4">
@@ -386,7 +386,7 @@ const FullPageSections = () => {
 
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
                     {/* Image Section - Left Side */}
-                    <div className="w-full lg:w-1/2 flex items-center justify-center">
+                    <div className="relative w-full lg:w-1/2 flex items-center justify-center before:hidden lg:before:block before:absolute before:right-0 before:top-0 before:h-full before:w-[1px] before:bg-gradient-to-t from-transparent via-sky-500 to-transparent">
                         <img
                             src={challenges}
                             alt="Challenges in Medical Tourism"
@@ -397,10 +397,10 @@ const FullPageSections = () => {
                     {/* Content Section */}
                     <div className="w-full lg:w-1/2">
                         <div className="mb-6">
-                            <h2 className="text-3xl font-bold text-gray-800 mb-2">
+                        <h2 className="relative text-4xl font-bold text-gray-800 mb-2 pl-5 before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:bg-primary">
                                 The Challenges We Solve
                             </h2>
-                            <div className="h-1 w-20 bg-primary rounded-full"></div>
+                            {/* <div className="h-1 w-20 bg-primary rounded-full"></div> */}
                         </div>
 
                         <div className="space-y-4">
