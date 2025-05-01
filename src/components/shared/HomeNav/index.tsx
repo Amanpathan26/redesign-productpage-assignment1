@@ -129,11 +129,12 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 										if (scrollToSection && item.ref) {
 											scrollToSection(item.ref);
 										}
+										navigate(`${item.text.toLowerCase()}`)
 									}}
 								>
 									<div className="relative overflow-hidden">
 										<div className={`text-lg font-medium text-gray-800 hover:text-[--text] transition-all duration-300 cursor-pointer hover:translate-x-2`}>
-											{item.icon} {item.text}
+											{item.text}
 										</div>
 										<div className="absolute bottom-0 h-0.5 w-full bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
 									</div>
