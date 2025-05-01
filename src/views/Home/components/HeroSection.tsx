@@ -35,7 +35,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <div className="w-full flex flex-col lg:flex-row-reverse md:mt-6 lg:mt-0 lg:items-center lg:justify-between max-w-[1538px] mx-auto">
                     <div className="lg:w-1/2 mx-auto text-center">
                         <h1
-                            className="text-5xl md:text-6xl font-bold mb-4 capitalize"
+                            className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 capitalize"
                             style={{
                                 fontFamily: 'var(--font-heading)',
                                 color: 'var(--text)',
@@ -46,7 +46,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                         </h1>
 
                         <p
-                            className="text-xl md:text-2xl my-8 font-light"
+                            className="text-lg xs:text-xl md:text-2xl my-8 font-light"
                             style={{
                                 fontFamily: 'var(--font-base)',
                                 color: 'var(--text)'
