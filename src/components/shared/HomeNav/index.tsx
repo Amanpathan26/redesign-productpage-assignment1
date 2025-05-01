@@ -8,11 +8,11 @@ import HcfSignupPopup from '../Popups/HcfSignupPopup';
 
 /**
  * @interface HomeNavbarProps
- * @description Props for the HomeNavbar component
- * @property {(ref: React.RefObject<HTMLElement>) => void} [scrollToSection] - Function to scroll to a specific section
- * @property {React.RefObject<HTMLElement>} [featuresRef] - Reference to the features section
- * @property {React.RefObject<HTMLElement>} [aboutRef] - Reference to the about section
- * @property {React.RefObject<HTMLElement>} [contactRef] - Reference to the contact section
+ * @description
+ * @property {(ref: React.RefObject<HTMLElement>) => void} [scrollToSection] 
+ * @property {React.RefObject<HTMLElement>} [featuresRef]
+ * @property {React.RefObject<HTMLElement>} [aboutRef]
+ * @property {React.RefObject<HTMLElement>} [contactRef] 
  */
 interface HomeNavbarProps {
 	scrollToSection?: (ref: React.RefObject<HTMLElement>) => void;
@@ -22,29 +22,16 @@ interface HomeNavbarProps {
 }
 
 /**
- * HomeNavbar Component
- * 
- * A responsive navigation bar component that provides navigation controls and authentication options.
- * Features both desktop and mobile layouts with smooth scrolling to different sections.
- * 
  * @component
- * @param {HomeNavbarProps} props - Component props
- * @param {Function} props.scrollToSection - Optional function to handle smooth scrolling to sections
- * @param {React.RefObject} props.featuresRef - Reference to features section
- * @param {React.RefObject} props.aboutRef - Reference to about section
- * @param {React.RefObject} props.contactRef - Reference to contact section
+ * @param {HomeNavbarProps} props 
+ * @param {Function} props.scrollToSection 
+ * @param {React.RefObject} props.featuresRef
+ * @param {React.RefObject} props.aboutRef 
+ * @param {React.RefObject} props.contactRef
  * 
- * @returns {JSX.Element} A responsive navigation bar with logo, menu items, and authentication buttons
+ * @returns {JSX.Element} 
  * 
  * @example
- * return (
- *   <HomeNavbar 
- *     scrollToSection={handleScroll}
- *     featuresRef={featuresRef}
- *     aboutRef={aboutRef}
- *     contactRef={contactRef}
- *   />
- * )
  */
 const HomeNavbar: React.FC<HomeNavbarProps> = ({
 	scrollToSection,
@@ -73,6 +60,12 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 			ref: contactRef,
 			icon: '📞',
 		},
+		{
+			text: 'Themes',
+			to: '/themes',
+			ref: null,
+			icon: '',
+		},
 	];
 
 	const navigate: NavigateFunction = useNavigate();
@@ -91,7 +84,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 	}, [pathname]);
 
 	return (
-		<nav className={`w-full py-2 bg-primary`}>
+		<nav className={`w-full py-2  bg-[var(--primary)]`}>
 			<div className="max-w-[1538px] mx-auto px-4 w-full">
 				<div className="flex justify-between h-16 items-center">
 					{/* Logo */}
@@ -109,14 +102,12 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 							<li
 								key={item.text}
 								className={`relative flex gap-1 text-[#ffffffc9] list-none transition-all duration-300 hover:text-white cursor-pointer before:absolute before:left-0 before:bottom-0 before:w-0 before:hover:w-[70%] before:transition-all before:duration-500 before:h-[1px] before:bg-white`}
-								onClick={() => (scrollToSection && item.ref) ? scrollToSection(item.ref) : navigate('/?scrollTo=' + item.text)}
+								onClick={() => (scrollToSection && item.ref) ? scrollToSection(item.ref) : navigate(`${item.text.toLowerCase()}`)}
 							>
-								<span>{item.icon}</span>
 								<span>{item.text}</span>
 							</li>
 						))}
 					</div>
-
 					<div
 						className={`lg:hidden fixed h-full w-[90%] xs:w-[50%] bg-white/95 backdrop-blur-sm top-0 z-[9999] shadow-2xl transition-all duration-300 ease-in-out ${menuStatus ? 'right-0' : 'right-[-130%]'} transition-all duration-300`}
 					>
@@ -141,7 +132,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 									}}
 								>
 									<div className="relative overflow-hidden">
-										<div className={`text-lg font-medium text-gray-800 hover:text-primary transition-all duration-300 cursor-pointer hover:translate-x-2`}>
+										<div className={`text-lg font-medium text-gray-800 hover:text-[--text] transition-all duration-300 cursor-pointer hover:translate-x-2`}>
 											{item.icon} {item.text}
 										</div>
 										<div className="absolute bottom-0 h-0.5 w-full bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />

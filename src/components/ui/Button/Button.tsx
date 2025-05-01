@@ -124,7 +124,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
         const btn = {
             bgColor: active ? `bg-primary-deep` : `bg-primary`,
             textColor: 'text-neutral',
-            hoverColor: active ? '' : `hover:bg-primary-mild`,
+            hoverColor: active ? '' : `hover:bg-[var(--primaryLight)]`,
             activeColor: ``,
         }
         return getBtnColor(btn)

@@ -101,7 +101,7 @@ const FullPageSections = () => {
             img: aboutUs,
             icon1: (
                 <svg
-                    className="w-6 h-6 text-primary"
+                    className="w-6 h-6 text-[var(--primary)]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -116,7 +116,7 @@ const FullPageSections = () => {
             ),
             icon2: (
                 <svg
-                    className="w-6 h-6 text-primary"
+                    className="w-6 h-6 text-[var(--primary)]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -191,7 +191,7 @@ const FullPageSections = () => {
             <div className="w-full max-w-7xl mx-auto px-4 py-20 flex flex-col gap-y-32">
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
                     {/* Image Section */}
-                    <div className="relative w-full lg:w-1/2 flex items-center justify-center before:hidden lg:before:block before:absolute before:right-0 before:top-0 before:h-full before:w-[1px] before:bg-gradient-to-t from-transparent via-sky-500 to-transparent">
+                    <div className="relative w-full lg:w-1/2 flex items-center justify-center before:hidden lg:before:block before:absolute before:right-0 before:top-0 before:h-full before:w-[1px] before:bg-gradient-to-t from-transparent via-[var(--primary)] to-transparent">
                         <img
                             src={aboutUs}
                             alt="About us"
@@ -202,7 +202,7 @@ const FullPageSections = () => {
                     {/* Content Section */}
                     <div className="w-full lg:w-1/2">
                         <div className="mb-6">
-                            <h2 className="relative text-4xl font-bold text-gray-800 mb-2 pl-5 before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:bg-primary">
+                            <h2 className="relative text-4xl font-bold text-gray-800 mb-2 pl-5 before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:bg-[var(--primary)]">
                                 About Us
                             </h2>
                             {/* <div className="h-1 w-20 bg-primary rounded-full"></div> */}
@@ -289,7 +289,7 @@ const FullPageSections = () => {
 
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
                     {/* Image Section - Will appear first on mobile */}
-                    <div className="relative w-full lg:w-1/2 flex items-center justify-center order-first lg:order-last before:hidden lg:before:block before:absolute before:left-0 before:top-0 before:h-full before:w-[1px] before:bg-gradient-to-t from-transparent via-sky-500 to-transparent">
+                    <div className="relative w-full lg:w-1/2 flex items-center justify-center order-first lg:order-last before:hidden lg:before:block before:absolute before:left-0 before:top-0 before:h-full before:w-[1px] before:bg-gradient-to-t from-transparent via-[var(--primary)] to-transparent">
                         <img
                             src={mission}
                             alt="Our Mission"
@@ -386,7 +386,7 @@ const FullPageSections = () => {
 
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
                     {/* Image Section - Left Side */}
-                    <div className="relative w-full lg:w-1/2 flex items-center justify-center before:hidden lg:before:block before:absolute before:right-0 before:top-0 before:h-full before:w-[1px] before:bg-gradient-to-t from-transparent via-sky-500 to-transparent">
+                    <div className="relative w-full lg:w-1/2 flex items-center justify-center before:hidden lg:before:block before:absolute before:right-0 before:top-0 before:h-full before:w-[1px] before:bg-gradient-to-t from-transparent via-[var(--primary)] to-transparent">
                         <img
                             src={challenges}
                             alt="Challenges in Medical Tourism"
